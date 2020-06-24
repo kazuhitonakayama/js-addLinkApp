@@ -7,8 +7,12 @@
 <script>
   function getValue() {
     // const paracontent = document.getElementsCLassName('text').textContent;
-    const paracontent = document.getElementsByClassName('text')[1];
-    console.log(paracontent);
+    var c = <%= @count %>;
+    for (var i = 0; i<c; i++) {
+        const paracontent = document.getElementsByClassName('text')[i].textContent;
+        var result = paracontent.replace("これ", "これ https://qiita.com/hkengo/items/3c894f408931d0d0c9d5");
+        console.log(result);
+    }
     // console.log(paraconten);
     // const paracontent = document.getElementById('text')
     // document.getElementById('output').value = para;
