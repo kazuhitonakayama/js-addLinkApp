@@ -10,18 +10,15 @@
     var c = <%= @count %>;
     for (var i = 0; i<c; i++) {
         const paracontent = document.getElementsByClassName('text')[i].textContent;
-        var result = paracontent.replace("これ", "これ https://qiita.com/hkengo/items/3c894f408931d0d0c9d5");
-        console.log(result);
+        const link ="商品ページへ".link("http://www.dmm.com/netgame/feature/kancolle.html");
+
+        console.log(link);
+
+        var result = paracontent.replace("これ", "これ"+link);
+
+        let para = document.createElement('p');
+        para.innerHTML = result;
+        document.body.appendChild(para);
     }
-    // console.log(paraconten);
-    // const paracontent = document.getElementById('text')
-    // document.getElementById('output').value = para;
-
-    // var textMsg = document.getElementById('text');
-    // console.log(textMsg.innerHTML);
-
-    // let para = document.createElement('p');
-    // para.textContent = paracontent;
-    // document.body.appendChild(para);
   }
 </script>
